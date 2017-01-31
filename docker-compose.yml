@@ -1,0 +1,15 @@
+version: "2"
+services:
+  pgbkp:
+    build:
+      context: .
+    image: postgres-bkp
+    env_file:
+      - ./pg_connect.env
+    links:
+      - db
+    volumes:
+      - ./data:/data
+
+  db:
+    image: postgres:9.6
