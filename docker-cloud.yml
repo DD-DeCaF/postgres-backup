@@ -1,0 +1,11 @@
+pgbkp:
+  image: 'dddecaf/postgres-backup:master'
+  environment:
+    BACKUP_DIR:
+    PGHOST: db
+    PGDATABASE: postgres
+    PGUSER: postgres
+    #PGPORT: 5437
+    #PGPASSWORD:
+  links:
+    - 'service.stack:db'
