@@ -2,7 +2,7 @@
 
 set -ev
 
-REPO="dddecaf/cloud-fcron"
+REPO="dddecaf/postgres-backup"
 GIT_MASTER_HEAD_SHA=$(git rev-parse --short=12 --verify HEAD)
 BRANCH=$(git symbolic-ref --short HEAD)
 
