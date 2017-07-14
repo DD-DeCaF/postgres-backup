@@ -40,3 +40,7 @@ You can try it out with the following steps:
    since the database is empty.
 3. If you want to adjust the environment variables, we suggest creating an
    [`.env`](https://docs.docker.com/compose/env-file/) file.
+
+## Also See
+
+[postgres-restore](https://github.com/DD-DeCaF/postgres-restore)
