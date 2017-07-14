@@ -1,15 +1,18 @@
-version: "2"
+version: "2.1"
 services:
   pgbkp:
     build:
       context: .
     image: postgres-bkp
-    env_file:
-      - ./pg_connect.env
     links:
       - db
     volumes:
-      - ./data:/data
-
+      - ./data:${BACKUP_DIR:-/data}
+    environment:
+      - BACKUP_DIR=${BACKUP_DIR:-/data}
+      - PGHOST=${PGHOST:-db}
+      - PGDATABASE=${PGDATABASE:-postgres}
+      - PGUSER=${PGUSER:-postgres}
+      - PGPORT=${PGPORT:-5432}
   db:
-    image: postgres:9.6
+    image: postgres:9.6-alpine
